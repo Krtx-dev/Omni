@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #030508;
+  --color-panel: #070a0e;
+  --color-line: #161d26;
+  --color-line-strong: #263140;
+  --color-ink: #c9d1db;
+  --color-bright: #e8edf3;
+  --color-dim: #7a8696;
+  --color-faint: #444f5d;
+  --color-warn: #e0a84a;
+  --color-alert: #e5604d;
+  --color-ok: #5cc98a;
+
+  --font-sans: ui-sans-serif, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+::selection {
+  background: #2a3a4d;
+}
+
+:focus-visible {
+  outline: 1px solid var(--color-dim);
+  outline-offset: 1px;
+}
+
+/* Hairline range input: a 1px track and a square thumb. */
+input[type="range"] {
+  appearance: none;
+  background: transparent;
+  height: 14px;
+  width: 100%;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 1px;
+  background: var(--color-line-strong);
+}
+input[type="range"]::-moz-range-track {
+  height: 1px;
+  background: var(--color-line-strong);
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 7px;
+  height: 11px;
+  margin-top: -5px;
+  background: var(--color-bright);
+  border: 0;
+  border-radius: 0;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 7px;
+  height: 11px;
+  background: var(--color-bright);
+  border: 0;
+  border-radius: 0;
+}
+
+/* Thin scrollbars for panels. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
